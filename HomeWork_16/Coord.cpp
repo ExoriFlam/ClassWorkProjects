@@ -55,14 +55,14 @@ Coord::Coord(const char* str) : x{ 0 }, y{ 0 }
 	}
 	else
 	{
-		cout << "Îøèáêà! Ïàìÿòü íå âûäåëåíà.";
+		cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! ÐŸÐ°Ð¼ÑÑ‚ÑŒ Ð½Ðµ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð°.";
 		copy = nullptr;
 	}
 	
 	
 }
 
-Coord::Coord(const Coord& obj) : x{ obj.x }, y{ obj.y }// êîíñòðóêòîð êîïèðîâàíèÿ
+Coord::Coord(const Coord& obj) : x{ obj.x }, y{ obj.y }// ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ
 {
 	
 	this->count++;
@@ -202,9 +202,9 @@ ostream& operator<<(ostream& out, const Coord& right)
 
 istream& operator>>(istream& in,Coord& right)
 {
-	cout << "\nÂâåäèòå x:\n";
+	cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ x:\n";
 	right.x = right.check_input<int>();
-	cout << "\nÂâåäèòå y:\n";
+	cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ y:\n";
 	right.y = right.check_input<int>();
 	return in;
 }

@@ -56,7 +56,7 @@ T MyArray::check_input()
 	cin >> temp;
 	while (cin.fail())
 	{
-		cout << "\n Îøèáêà ââîäà!";
+		cout << "\n ÑœÑˆÐ¸Ð±ÐºÐ° Ð²Ð²Ð¾Ð´Ð°!";
 		cin.clear();
 		cin.ignore(256, '\n');
 		cin >> temp;

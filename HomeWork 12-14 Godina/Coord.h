@@ -65,7 +65,7 @@ inline T Coord::check_input()
 	cin >> temp;
 	while (cin.fail())
 	{
-		cout << "\nÎøèáêà ââîäà!";
+		cout << "\nïž¬×¨×˜×‘×š× ×’×’×ž×”×!";
 		cin.clear();
 		cin.ignore(256, '\n');
 		cin >> temp;

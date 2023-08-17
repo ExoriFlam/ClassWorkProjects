@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include "My_Array_Template.h"
 #include "MyString.h"
 #include "Coord.h"

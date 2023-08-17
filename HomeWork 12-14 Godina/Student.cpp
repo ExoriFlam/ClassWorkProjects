@@ -24,7 +24,7 @@ void Student::copy_str(char*& destination, const char* source)
 			}
 			else
 			{
-				cout << "\n Ïàìÿòü íå âûäåëåíà";
+				cout << "\n ÐŸÐ°Ð¼ÑÑ‚ÑŒ Ð½Ðµ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð°";
 			}
 
 		}
@@ -38,7 +38,7 @@ void Student::copy_str(char*& destination, const char* source)
 			}
 			else
 			{
-				cout << "\n Ïàìÿòü íå âûäåëåíà";
+				cout << "\n ÐŸÐ°Ð¼ÑÑ‚ÑŒ Ð½Ðµ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð°";
 			}
 		}
 
@@ -46,8 +46,8 @@ void Student::copy_str(char*& destination, const char* source)
 
 }
 
-/*Çàäàíèå 3. Â óæå ñóùåñòâóþùèé êëàññ Ñòóäåíò äîáàâüòå êîíñòðóêòîð, êîòîðûé â äîïîëíåíèå ê
-	îñíîâíûì äàííûì ïðèíèìàåò ïðîèçâîëüíîå êîëè÷åñòâî îöåíîê â êà÷åñòâå ïàðàìåòðîâ.*/
+/*Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 3. Ð’ ÑƒÐ¶Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÑŽÑ‰Ð¸Ð¹ ÐºÐ»Ð°ÑÑ Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚ Ð´Ð¾Ð±Ð°Ð²ÑŒÑ‚Ðµ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹ Ð² Ð´Ð¾Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ Ðº
+	Ð¾ÑÐ½Ð¾Ð²Ð½Ñ‹Ð¼ Ð´Ð°Ð½Ð½Ñ‹Ð¼ Ð¿Ñ€Ð¸Ð½Ð¸Ð¼Ð°ÐµÑ‚ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð»ÑŒÐ½Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¾Ñ†ÐµÐ½Ð¾Ðº Ð² ÐºÐ°Ñ‡ÐµÑÑ‚Ð²Ðµ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð².*/
 
 Student::Student(const char* l_name, const char* f_name, int birthday, const char* phone, const char* institution, int group_id, int _size, ...) :
 	birthday{ birthday }, group_id{ group_id }
@@ -62,7 +62,7 @@ Student::Student(const char* l_name, const char* f_name, int birthday, const cha
 	else
 	{
 		strcpy_s(phone_nbr, "+000 000 000 000");
-		std::cout << "Îøèáêà! Ìàêñèàëüíîå êîë-âî ñèìâîëîâ 32!";
+		std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! ÐœÐ°ÐºÑÐ¸Ð°Ð»ÑŒÐ½Ð¾Ðµ ÐºÐ¾Ð»-Ð²Ð¾ ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð² 32!";
 	}
 	copy_str(this->institution, institution);
 	
@@ -101,7 +101,7 @@ Student::Student(const char* l_name, const char* f_name, int birthday, const cha
 	else
 	{
 		strcpy_s(phone_nbr, "+000 000 000 000");
-		std::cout << "Îøèáêà! Ìàêñèàëüíîå êîë-âî ñèìâîëîâ 32!";
+		std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! ÐœÐ°ÐºÑÐ¸Ð°Ð»ÑŒÐ½Ð¾Ðµ ÐºÐ¾Ð»-Ð²Ð¾ ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð² 32!";
 	}
 	copy_str(this->institution, institution);
 
@@ -125,7 +125,7 @@ Student::Student(const char* l_name, const char* f_name, int birthday, const cha
 	else
 	{
 		strcpy_s(phone_nbr, "+000 000 000 000");
-		std::cout << "Îøèáêà! Ìàêñèàëüíîå êîë-âî ñèìâîëîâ 32!";
+		std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! ÐœÐ°ÐºÑÐ¸Ð°Ð»ÑŒÐ½Ð¾Ðµ ÐºÐ¾Ð»-Ð²Ð¾ ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð² 32!";
 	}
 	copy_str(this->institution, institution);
 
@@ -181,7 +181,7 @@ void Student::set_phone_nbr(const char* str)
 	else
 	{
 		strcpy_s(phone_nbr, "+000 000 000 000");
-		std::cout << "Îøèáêà! Ìàêñèàëüíîå êîë-âî ñèìâîëîâ 32!";
+		std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! ÐœÐ°ÐºÑÐ¸Ð°Ð»ÑŒÐ½Ð¾Ðµ ÐºÐ¾Ð»-Ð²Ð¾ ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð² 32!";
 	}
 }
 
@@ -292,15 +292,15 @@ Student::~Student()
 
 std::ostream& operator<<(std::ostream& out, const Student& obj)
 {
-	out << "\nÔàìèëèÿ            :" << obj.last_name;
-	out << "\nÈìÿ                :" << obj.first_name;
-	out << "\nÃîä ðîæäåíèÿ       :" << obj.birthday;
-	out << "\nÍîìåð òåëåôîíà     :" << obj.phone_nbr;
-	out << "\nÓ÷åáíîãî çàâåäåíèå :" << obj.institution;
-	out << "\nÍîìåð ãðóïïû       :" << obj.group_id;
-	out << "\nÎöåíêè             :";
+	out << "\nÐ¤Ð°Ð¼Ð¸Ð»Ð¸Ñ            :" << obj.last_name;
+	out << "\nÐ˜Ð¼Ñ                :" << obj.first_name;
+	out << "\nÐ“Ð¾Ð´ Ñ€Ð¾Ð¶Ð´ÐµÐ½Ð¸Ñ       :" << obj.birthday;
+	out << "\nÐÐ¾Ð¼ÐµÑ€ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°     :" << obj.phone_nbr;
+	out << "\nÐ£Ñ‡ÐµÐ±Ð½Ð¾Ð³Ð¾ Ð·Ð°Ð²ÐµÐ´ÐµÐ½Ð¸Ðµ :" << obj.institution;
+	out << "\nÐÐ¾Ð¼ÐµÑ€ Ð³Ñ€ÑƒÐ¿Ð¿Ñ‹       :" << obj.group_id;
+	out << "\nÐžÑ†ÐµÐ½ÐºÐ¸             :";
 	out << "\n" << obj.marks;
-	out << "\nÑðåäíèé áàëë       :" << obj.get_avg_marks();
+	out << "\nÐ¡Ñ€ÐµÐ´Ð½Ð¸Ð¹ Ð±Ð°Ð»Ð»       :" << obj.get_avg_marks();
 
 	return out;
 }
@@ -309,23 +309,23 @@ std::istream& operator>>(std::istream& in, Student& obj)
 {
 	char bufer[64];
 	int temp = 0;
-	std::cout << "\nÂâåäèòå ãîä ðîæäåíèÿ                : ";
+	std::cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð³Ð¾Ð´ Ñ€Ð¾Ð¶Ð´ÐµÐ½Ð¸Ñ                : ";
 	
 	obj.birthday = obj.check_input<int>();
 
 	in.get();
 
-	std::cout << "\nÂâåäèòå Ôàìèëèþ                     : ";
+	std::cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¤Ð°Ð¼Ð¸Ð»Ð¸ÑŽ                     : ";
 
 	in.getline(bufer, sizeof(bufer));
 	obj.copy_str(obj.last_name, bufer);
 
 
-	std::cout << "\nÂâåäèòå Èìÿ                         : ";
+	std::cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð˜Ð¼Ñ                         : ";
 	in.getline(bufer, sizeof(bufer));
 	obj.copy_str(obj.first_name, bufer);
 
-	std::cout << "\nÂâåäèòå íîìåð òåëåôîíà              : ";
+	std::cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°              : ";
 	in.getline(bufer, sizeof(bufer));
 
 	if (strlen(bufer) <= 32)
@@ -335,18 +335,18 @@ std::istream& operator>>(std::istream& in, Student& obj)
 	else
 	{
 		strcpy_s(obj.phone_nbr, "+000 000 000 000");
-		std::cout << "Îøèáêà! Ìàêñèàëüíîå êîë-âî ñèìâîëîâ 32!";
+		std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! ÐœÐ°ÐºÑÐ¸Ð°Ð»ÑŒÐ½Ð¾Ðµ ÐºÐ¾Ð»-Ð²Ð¾ ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð² 32!";
 	}
 
-	std::cout << "\nÂâåäèòå íàçâàíèå ó÷åáíîãî çàâåäåíèÿ : ";
+	std::cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ ÑƒÑ‡ÐµÐ±Ð½Ð¾Ð³Ð¾ Ð·Ð°Ð²ÐµÐ´ÐµÐ½Ð¸Ñ : ";
 	in.getline(bufer, sizeof(bufer));
 	obj.copy_str(obj.institution, bufer);
 
-	std::cout << "\nÂâåäèòå íîìåð ãðóïïû                : ";
+	std::cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð³Ñ€ÑƒÐ¿Ð¿Ñ‹                : ";
 
 	obj.group_id = obj.check_input<int>();
 
-	std::cout << "\nÂâîä îöåíîê                         : ";
+	std::cout << "\nÐ’Ð²Ð¾Ð´ Ð¾Ñ†ÐµÐ½Ð¾Ðº                         : ";
 	in >> obj.marks;
 
 

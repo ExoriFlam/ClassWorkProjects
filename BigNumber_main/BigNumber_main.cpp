@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include "BigNumber.h"
 #include <iomanip>
 using namespace std;

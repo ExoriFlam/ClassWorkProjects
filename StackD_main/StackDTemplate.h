@@ -27,8 +27,8 @@ public:
 	bool is_full() const { return top == size; }
 	bool push(const Type& item);
 	bool pop(Type& item);
-	int get_сount() const { return top; }
-	static int get_сount_all() { return count; }
+	int get_СЃount() const { return top; }
+	static int get_СЃount_all() { return count; }
 	~StackDTemplate() { count--; delete[] items; }
 };
 
@@ -39,7 +39,7 @@ public:
 
 
 template<class Type>
-int StackDTemplate<Type>::count = 0; // инициализация статической переменной класса
+int StackDTemplate<Type>::count = 0; // РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃС‚Р°С‚РёС‡РµСЃРєРѕР№ РїРµСЂРµРјРµРЅРЅРѕР№ РєР»Р°СЃСЃР°
 
 template<class Type>
 StackDTemplate<Type>::StackDTemplate(int size) :

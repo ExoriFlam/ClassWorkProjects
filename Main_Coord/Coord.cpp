@@ -12,7 +12,7 @@ int Coord::count = 0;
 Coord::Coord() : x{ 0 }, y{ 0 }
 {
 #ifdef DEBUG
-	cout << "\nÊîíñòðóêòîð ïî óìîë÷àíèþ";
+	cout << "\nÐšÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ";
 #endif // DEBUG
 	
 	this->count++;
@@ -21,7 +21,7 @@ Coord::Coord() : x{ 0 }, y{ 0 }
 Coord::Coord(const int x, const int y) : x{ x }, y{ y }
 {
 #ifdef DEBUG
-	cout << "\nÊîíñòðóêòîð ñ ïàðàìåòðàìè";
+	cout << "\nÐšÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸";
 #endif // DEBUG
 	
 	this->count++;
@@ -31,7 +31,7 @@ Coord::Coord(const int x, const int y) : x{ x }, y{ y }
 Coord::Coord(const int value) : x{ value }, y{ value }
 {
 #ifdef DEBUG
-	cout << "\nÊîíñòðóêòîð ïðåîáðàçîâàíèÿ";
+	cout << "\nÐšÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð¿Ñ€ÐµÐ¾Ð±Ñ€Ð°Ð·Ð¾Ð²Ð°Ð½Ð¸Ñ";
 #endif // DEBUG
 	
 	this->count++;
@@ -41,7 +41,7 @@ Coord::Coord(const int value) : x{ value }, y{ value }
 Coord::Coord(const char* str) : x{ 0 }, y{ 0 }
 {
 #ifdef DEBUG
-	cout << "\nÊîíñòðóêòîð ïðåîáðàçîâàíèÿ";
+	cout << "\nÐšÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð¿Ñ€ÐµÐ¾Ð±Ñ€Ð°Ð·Ð¾Ð²Ð°Ð½Ð¸Ñ";
 #endif // DEBUG
 
 	char* copy{nullptr};
@@ -69,17 +69,17 @@ Coord::Coord(const char* str) : x{ 0 }, y{ 0 }
 	}
 	else
 	{
-		cout << "Îøèáêà! Ïàìÿòü íå âûäåëåíà.";
+		cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! ÐŸÐ°Ð¼ÑÑ‚ÑŒ Ð½Ðµ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð°.";
 		copy = nullptr;
 	}
 	
 	
 }
 
-Coord::Coord(const Coord& obj) : x{ obj.x }, y{ obj.y }// êîíñòðóêòîð êîïèðîâàíèÿ
+Coord::Coord(const Coord& obj) : x{ obj.x }, y{ obj.y }// ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ
 {
 #ifdef DEBUG
-	cout << "\nÊîíñòðóêòîð êîïèé";
+	cout << "\nÐšÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ¾Ð¿Ð¸Ð¹";
 #endif // DEBUG
 	
 	this->count++;
@@ -197,7 +197,7 @@ Coord::~Coord()
 {
 	count--;
 #ifdef DEBUG
-	cout << "\nÄåñòðóêòîð "<< count + 1;
+	cout << "\nÐ”ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ "<< count + 1;
 	
 #endif // DEBUG
 
@@ -225,9 +225,9 @@ ostream& operator<<(ostream& out, const Coord& right)
 
 istream& operator>>(istream& in,Coord& right)
 {
-	cout << "\nÂâåäèòå x:\n";
+	cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ x:\n";
 	right.x = right.check_input<int>();
-	cout << "\nÂâåäèòå y:\n";
+	cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ y:\n";
 	right.y = right.check_input<int>();
 	return in;
 }

@@ -58,7 +58,7 @@ BigNumber::BigNumber(const char* str_to_digits) : arr{ 0 }
 		}
 		else
 		{
-			cout << "\n Ïàìÿòü íå âûäåëåíà.";
+			cout << "\n ĞŸĞ°Ğ¼ÑÑ‚ÑŒ Ğ½Ğµ Ğ²Ñ‹Ğ´ĞµĞ»ĞµĞ½Ğ°.";
 		}
 	}
 }

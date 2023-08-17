@@ -72,7 +72,7 @@ MyArrayTemplate<Type>::MyArrayTemplate(int other_size, Type* other_arr) :
 	}
 	else
 	{
-		cout << "\nÏàìÿòü íå âûäåëåíà";
+		cout << "\nÐŸÐ°Ð¼ÑÑ‚ÑŒ Ð½Ðµ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð°";
 		arr = nullptr;
 		size = 0u;
 	}
@@ -92,7 +92,7 @@ MyArrayTemplate<Type>::MyArrayTemplate(const MyArrayTemplate<Type>& other) :
 	}
 	else
 	{
-		cout << "\nÏàìÿòü íå âûäåëåíà";
+		cout << "\nÐŸÐ°Ð¼ÑÑ‚ÑŒ Ð½Ðµ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð°";
 		arr = nullptr;
 		size = 0U;
 	}
@@ -127,7 +127,7 @@ MyArrayTemplate<Type>& MyArrayTemplate<Type>::operator=(const MyArrayTemplate<Ty
 	}
 	else
 	{
-		cout << "\nÏàìÿòü íå âûäåëåíà";
+		cout << "\nÐŸÐ°Ð¼ÑÑ‚ÑŒ Ð½Ðµ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð°";
 		arr = nullptr;
 		size = 0U;
 	}
@@ -244,7 +244,7 @@ void MyArrayTemplate<Type>::push_back(const Type& val)
 	}
 	else
 	{
-		cout << "\nÏàìÿòü íå âûäåëåíà";
+		cout << "\nÐŸÐ°Ð¼ÑÑ‚ÑŒ Ð½Ðµ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð°";
 		arr = nullptr;
 		size = 0u;
 	}

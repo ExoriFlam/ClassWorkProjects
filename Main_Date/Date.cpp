@@ -260,7 +260,7 @@ Date& Date::operator+=(int _days)
 
 bool Date::operator>(const Date& other) const
 {
-	//return (int)*this > (int)other;// приводим оба объекта к инту и сравниваем но получается затратно.
+	//return (int)*this > (int)other;// РїСЂРёРІРѕРґРёРј РѕР±Р° РѕР±СЉРµРєС‚Р° Рє РёРЅС‚Сѓ Рё СЃСЂР°РІРЅРёРІР°РµРј РЅРѕ РїРѕР»СѓС‡Р°РµС‚СЃВ¤ Р·Р°С‚СЂР°С‚РЅРѕ.
 	if (year > other.year)return true;
 	if (year < other.year)return false;
 	if (month > other.month)return true;
@@ -367,7 +367,7 @@ void Date::set_date(const char* date_in_str)
 	}
 	else
 	{
-		cout << "\nПустая строка.";
+		cout << "\nС•СѓСЃС‚Р°В¤ СЃС‚СЂРѕРєР°.";
 		
 	}
 	
@@ -379,29 +379,29 @@ const char* Date::get_month_in_str()const
 	switch (this->month)
 	{
 	case 1:
-		return "Январь";
+		return "СЏРЅРІР°СЂСЊ";
 	case 2:
-		return "Февраль";
+		return "вЂРµРІСЂР°Р»СЊ";
 	case 3:
-		return "Март";
+		return "С›Р°СЂС‚";
 	case 4:
-		return "Апрель";
+		return "СРїСЂРµР»СЊ";
 	case 5:
-		return "Май";
+		return "С›Р°Р№";
 	case 6:
-		return "Июнь";
+		return "В»СЋРЅСЊ";
 	case 7:
-		return "Июль";
+		return "В»СЋР»СЊ";
 	case 8:
-		return "Август";
+		return "СРІРіСѓСЃС‚";
 	case 9:
-		return "Сентябрь";
+		return "вЂ”РµРЅС‚В¤Р±СЂСЊ";
 	case 10:
-		return "Октябрь";
+		return "СњРєС‚В¤Р±СЂСЊ";
 	case 11:
-		return "Ноябрь";
+		return "РЊРѕВ¤Р±СЂСЊ";
 	case 12:
-		return "Декабрь";
+		return "Ж’РµРєР°Р±СЂСЊ";
 	default:
 		return "\0";
 	}
@@ -426,13 +426,13 @@ ostream& operator<<(ostream& out, const Date& obj)
 istream& operator>>(istream& in, Date& obj)
 {
 	
-	cout << "\nВведите День :  ";
+	cout << "\nВ¬РІРµРґРёС‚Рµ Ж’РµРЅСЊ :  ";
 	obj.day = obj.check_input<int>();
 	
-	cout << "\nВведите Месяц:  ";
+	cout << "\nВ¬РІРµРґРёС‚Рµ С›РµСЃВ¤С†:  ";
 	obj.month= obj.check_input<int>();
 
-	cout << "\nВведите Год  :  ";
+	cout << "\nВ¬РІРµРґРёС‚Рµ в€љРѕРґ  :  ";
 	obj.year = obj.check_input<int>();
 
 	return in;

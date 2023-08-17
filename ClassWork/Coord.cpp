@@ -6,13 +6,13 @@ using namespace std;
 
 #define DEBUG
 
-// Инициализация статической переменной класса
-int Coord::count = 0; // количество созданных объектов
+// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃС‚Р°С‚РёС‡РµСЃРєРѕР№ РїРµСЂРµРјРµРЅРЅРѕР№ РєР»Р°СЃСЃР°
+int Coord::count = 0; // РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРѕР·РґР°РЅРЅС‹С… РѕР±СЉРµРєС‚РѕРІ
 
 Coord::Coord() : x(0), y { 0 }
 {
 #ifdef DEBUG
-	cout << "\nКонструктор по умолчанию";
+	cout << "\nРљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ";
 #endif // DEBUG
 	
 	this->count++;
@@ -21,7 +21,7 @@ Coord::Coord() : x(0), y { 0 }
 Coord::Coord(const int x, const int y) 
 {
 #ifdef DEBUG
-	cout << "\nКонструктор с параметрами";
+	cout << "\nРљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё";
 #endif // DEBUG
 	
 	this->x = x;
@@ -33,7 +33,7 @@ Coord::Coord(const int x, const int y)
 Coord::Coord(const int value)
 {
 #ifdef DEBUG
-	cout << "\nКонструктор преобразования";
+	cout << "\nРљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ";
 #endif // DEBUG
 	this->x = this->y = value;
 	this->count++;
@@ -43,7 +43,7 @@ Coord::Coord(const int value)
 Coord::Coord(const char* str) : x{ 0 }, y{ 0 }
 {
 #ifdef DEBUG
-	cout << "\nКонструктор преобразования";
+	cout << "\nРљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ";
 #endif // DEBUG
 
 	char* copy{nullptr};
@@ -71,17 +71,17 @@ Coord::Coord(const char* str) : x{ 0 }, y{ 0 }
 	}
 	else
 	{
-		cout << "Ошибка! Память не выделена.";
+		cout << "РћС€РёР±РєР°! РџР°РјСЏС‚СЊ РЅРµ РІС‹РґРµР»РµРЅР°.";
 		copy = nullptr;
 	}
 	
 	
 }
 
-Coord::Coord(const Coord& obj)// конструктор копирования
+Coord::Coord(const Coord& obj)// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 {
 #ifdef DEBUG
-	cout << "\nКонструктор копий";
+	cout << "\nРљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёР№";
 #endif // DEBUG
 	this->x = obj.x;
 	this->y = obj.y;
@@ -222,7 +222,7 @@ Coord::~Coord()
 {
 	count--;
 #ifdef DEBUG
-	cout << "\nДеструктор "<< count;
+	cout << "\nР”РµСЃС‚СЂСѓРєС‚РѕСЂ "<< count;
 	//_getch();
 #endif // DEBUG
 
@@ -250,9 +250,9 @@ ostream& operator<<(ostream& out, const Coord& right)
 
 istream& operator>>(istream& in,Coord& right)
 {
-	cout << "\nВведите x:\n";
+	cout << "\nР’РІРµРґРёС‚Рµ x:\n";
 	in >> right.x;
-	cout << "\nВведите y:\n";
+	cout << "\nР’РІРµРґРёС‚Рµ y:\n";
 	in >> right.y;
 	return in;
 }

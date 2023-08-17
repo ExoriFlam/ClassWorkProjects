@@ -21,7 +21,7 @@ void Stock::dyn_str_copy(char*& destination, const char* source)
 			}
 			else
 			{
-				cout << "\nÏàìÿòü íå âûäåëåíà.";
+				cout << "\nÐŸÐ°Ð¼ÑÑ‚ÑŒ Ð½Ðµ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð°.";
 			}
 
 			
@@ -37,7 +37,7 @@ void Stock::dyn_str_copy(char*& destination, const char* source)
 			}
 			else
 			{
-				cout << "\nÏàìÿòü íå âûäåëåíà.";
+				cout << "\nÐŸÐ°Ð¼ÑÑ‚ÑŒ Ð½Ðµ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð°.";
 			}
 
 		}
@@ -77,11 +77,11 @@ Stock::Stock(const Stock& other) : count{other.count}, price{other.price}
 void Stock::show() const
 {
 	cout << setprecision(2) << fixed;
-	cout << "\nÍàçâàíèå             :" << name;
-	cout << "\nÏëàòôîðìà            :" << platform;
-	cout << "\nÊîë-âî               :" << count;
-	cout << "\nÖåíà                 :" << price;
-	cout << "\nÎáùàÿ öåíà           :" << total_price;
+	cout << "\nÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ             :" << name;
+	cout << "\nÐŸÐ»Ð°Ñ‚Ñ„Ð¾Ñ€Ð¼Ð°            :" << platform;
+	cout << "\nÐšÐ¾Ð»-Ð²Ð¾               :" << count;
+	cout << "\nÐ¦ÐµÐ½Ð°                 :" << price;
+	cout << "\nÐžÐ±Ñ‰Ð°Ñ Ñ†ÐµÐ½Ð°           :" << total_price;
 	cout << endl;
 }
 
@@ -150,17 +150,17 @@ bool Stock::sell_stock(int count)
 
 void Stock::input()
 {
-	cout << "\nÂâåäèòå íàçâàíèå ôèðìû : ";
+	cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ñ„Ð¸Ñ€Ð¼Ñ‹ : ";
 	cin.getline(name, sizeof(name));
-	cout << "\nÂâåäèòå íàçâàíèå ïëàòôîðìû : ";
+	cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¿Ð»Ð°Ñ‚Ñ„Ð¾Ñ€Ð¼Ñ‹ : ";
 	char buf[64];
 
 	cin.getline(buf, sizeof(buf));
 	dyn_str_copy(this->platform, buf);
 
-	cout << "\nÂâåäèòå êîëëè÷åñòâî: ";
+	cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾: ";
 	cin >> count;
-	cout << "\nÂâåäèòå ñòîèìîñòü îäíîé àêöèè : ";
+	cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÑ‚Ð¾Ð¸Ð¼Ð¾ÑÑ‚ÑŒ Ð¾Ð´Ð½Ð¾Ð¹ Ð°ÐºÑ†Ð¸Ð¸ : ";
 	cin >> price;
 	cin.get();
 	this->total_price = this->price * this->count;

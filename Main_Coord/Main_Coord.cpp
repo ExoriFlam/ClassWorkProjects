@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include "Coord.h"
 #include <stdarg.h>
 using namespace std;

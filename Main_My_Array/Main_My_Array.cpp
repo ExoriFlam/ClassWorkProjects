@@ -1,4 +1,4 @@
-﻿#include "My_Array.h"
+#include "My_Array.h"
 #include <iostream>
 #include <ctime>
 #include "My_Array_Template.h"

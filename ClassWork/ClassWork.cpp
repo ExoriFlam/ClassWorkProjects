@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include "Coord.h"
 #include "Rectangle.h"
 #include "Car.h"

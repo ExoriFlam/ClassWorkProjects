@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include "My_Array.h"
 #include "Coord.h"
 #include <stdarg.h>

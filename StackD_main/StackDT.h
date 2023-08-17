@@ -35,7 +35,7 @@ public:
 
 
 
-//int StackDT::count = 0; // инициализация статической переменной класса
+//int StackDT::count = 0; // РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃС‚Р°С‚РёС‡РµСЃРєРѕР№ РїРµСЂРµРјРµРЅРЅРѕР№ РєР»Р°СЃСЃР°
 template<class Type, int sz>
 StackDT<Type, sz>::StackDT() :
 	size{ sz }

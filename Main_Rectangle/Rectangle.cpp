@@ -24,7 +24,7 @@ void Rectangle::dyn_str_copy(char*& destination, const char* source)
 			}
 			else
 			{
-				cout << "\nÏàìÿòü íå âûäåëåíà.";
+				cout << "\nÐŸÐ°Ð¼ÑÑ‚ÑŒ Ð½Ðµ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð°.";
 			}
 
 		}
@@ -38,7 +38,7 @@ void Rectangle::dyn_str_copy(char*& destination, const char* source)
 			}
 			else
 			{
-				cout << "\nÏàìÿòü íå âûäåëåíà.";
+				cout << "\nÐŸÐ°Ð¼ÑÑ‚ÑŒ Ð½Ðµ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð°.";
 			}
 
 		}
@@ -92,11 +92,11 @@ Rectangle& Rectangle::operator=(const Rectangle& other)
 
 ostream& operator<<(ostream& out, const Rectangle& obj)
 {
-	out << "\nØèðèíà : " << obj.width;
-	out << "\nÂûñîòà : " << obj.height;
-	out << "\nÑèìâîë : " << obj.symbol;
-	out << "\nÖâåò   : " << obj.color_name;
-	out << "\nÏëîùàäü:  " << obj.area() << endl;
+	out << "\nÐ¨Ð¸Ñ€Ð¸Ð½Ð° : " << obj.width;
+	out << "\nÐ’Ñ‹ÑÐ¾Ñ‚Ð° : " << obj.height;
+	out << "\nÐ¡Ð¸Ð¼Ð²Ð¾Ð» : " << obj.symbol;
+	out << "\nÐ¦Ð²ÐµÑ‚   : " << obj.color_name;
+	out << "\nÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ:  " << obj.area() << endl;
 
 	return out;
 }
@@ -106,37 +106,37 @@ istream& operator>>(istream& in, Rectangle& obj)
 	char buf[64];
 	int input;
 
-	cout << "\nØèðèíà :       ";
+	cout << "\nÐ¨Ð¸Ñ€Ð¸Ð½Ð° :       ";
 	in >> input;
 	while (in.fail())
 	{
-		cout << "\nÂâåäèòå öèôðó.";
+		cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ†Ð¸Ñ„Ñ€Ñƒ.";
 		in.clear();
 		in.ignore(256, '\n');
 		in >> input;
 	}
 	obj.width = input;
 
-	cout << "Âûñîòà :       ";
+	cout << "Ð’Ñ‹ÑÐ¾Ñ‚Ð° :       ";
 	in >> input;
 	while (in.fail())
 	{
-		cout << "\nÂâåäèòå öèôðó.";
+		cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ†Ð¸Ñ„Ñ€Ñƒ.";
 		in.clear();
 		in.ignore(256, '\n');
 		in >> input;
 	}
 	obj.height = input;
 
-	cout << "\nÍàèìåíîâàíèå : ";
+	cout << "\nÐÐ°Ð¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ð½Ð¸Ðµ : ";
 	in.get();
 	in.getline(buf, sizeof(buf));
 	obj.dyn_str_copy(obj.name, buf);
 
-	cout << "Öâåò :           ";
+	cout << "Ð¦Ð²ÐµÑ‚ :           ";
 	in.getline(obj.color_name, sizeof(obj.color_name));
 
-	cout << "Ñèìâîë :         ";
+	cout << "Ð¡Ð¸Ð¼Ð²Ð¾Ð» :         ";
 
 	in >> obj.symbol;
 

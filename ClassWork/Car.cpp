@@ -17,8 +17,8 @@ Car::Car(int _passageCap, int _speed)
 
 void Car::show() const
 {
-	cout << "\nÊîëè÷åñòâî ïàññàæèğîâ:     " << this->passageCap;
-	cout << "\nÑêîğîñòü:                  " << this->speed;
+	cout << "\nĞšĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ Ğ¿Ğ°ÑÑĞ°Ğ¶Ğ¸Ñ€Ğ¾Ğ²:     " << this->passageCap;
+	cout << "\nĞ¡ĞºĞ¾Ñ€Ğ¾ÑÑ‚ÑŒ:                  " << this->speed;
 	cout << "\n\n";
 }
 
