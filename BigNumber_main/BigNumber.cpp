@@ -5,10 +5,10 @@ using namespace std;
 
 
 
-//конструктор по умолчанию (нелевые значения)
+
 BigNumber::BigNumber() : arr{ 0 } {}
 
-//конструктор прообразования (принимает целое число и записывает его цифры в конец массива, остальные начения до начала - нулевые)
+
 
 BigNumber::BigNumber(const int value) : arr{ 0 }
 {
@@ -24,8 +24,7 @@ BigNumber::BigNumber(const int value) : arr{ 0 }
 	
 }
 
-//конструктор преобразования(принимает строку из цифр, преобразует каждый символ в
-//цифру и записывает в конец массива, остальные значения до начала - нулевые)
+
 BigNumber::BigNumber(const char* str_to_digits) : arr{ 0 }
 {
 
@@ -65,7 +64,7 @@ BigNumber::BigNumber(const char* str_to_digits) : arr{ 0 }
 }
 
 
-//конструктор с параметрами(принимает одномерный массив цифр и его размер)
+
 BigNumber::BigNumber(int* other_arr, int other_size) : arr{ 0 }
 {
 	int j = 0;
@@ -95,7 +94,7 @@ BigNumber& BigNumber::operator=(const BigNumber& other)
 	return *this;
 }
 
-//оператор сложения двух объектов класса.
+
 BigNumber BigNumber::operator+(const BigNumber& other)
 {
 	
@@ -116,8 +115,6 @@ BigNumber BigNumber::operator+(const BigNumber& other)
 
 
 
-//оператор вывода объекта на экран с выравниванием по правому краю(максимальная
-//длина 80, незначащие нули не выводятся)
 ostream& operator<<(ostream& out, const BigNumber& obj)
 {
 	char str[81]{ '\0' };
