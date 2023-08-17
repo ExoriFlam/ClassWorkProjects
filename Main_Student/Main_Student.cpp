@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include "Student.h"
 #include "My_Array.h"
 #include <stdarg.h>

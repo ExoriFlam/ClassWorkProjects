@@ -24,7 +24,7 @@ MyArray::MyArray(int other_size, int* other_arr) : size{ static_cast<unsigned in
 	}
 	else
 	{
-		cout << "\nПамять не выделена";
+		cout << "\nРџР°РјСЏС‚СЊ РЅРµ РІС‹РґРµР»РµРЅР°";
 		arr = nullptr;
 		size = 0u;
 	}
@@ -42,7 +42,7 @@ MyArray::MyArray(const MyArray& other) : size{other.size}, arr {new int[other.si
 	}
 	else
 	{
-		cout << "\nПамять не выделена";
+		cout << "\nРџР°РјСЏС‚СЊ РЅРµ РІС‹РґРµР»РµРЅР°";
 		arr = nullptr;
 		size = 0U;
 	}
@@ -65,7 +65,7 @@ MyArray::MyArray(int other_size, int range_begin, int range_end) : size{ static_
 	}
 	else
 	{
-		cout << "\nПамять не выделена";
+		cout << "\nРџР°РјСЏС‚СЊ РЅРµ РІС‹РґРµР»РµРЅР°";
 		arr = nullptr;
 		size = 0u;
 	}
@@ -91,7 +91,7 @@ MyArray& MyArray::operator=(const MyArray& other)
 	}
 	else
 	{
-		cout << "\nПамять не выделена";
+		cout << "\nРџР°РјСЏС‚СЊ РЅРµ РІС‹РґРµР»РµРЅР°";
 		arr = nullptr;
 		size = 0U;
 	}
@@ -158,7 +158,7 @@ MyArray& MyArray::operator+=(int val)
 	}
 	else
 	{
-		cout << "\nПамять не выделена.";
+		cout << "\nРџР°РјСЏС‚СЊ РЅРµ РІС‹РґРµР»РµРЅР°.";
 		size = 0u;
 	}
 
@@ -212,13 +212,13 @@ istream& operator>>(istream& in, MyArray& obj)
 {
 	int tmp_input;
 
-	cout << "\n Введите длину массива : ";
+	cout << "\n Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ РјР°СЃСЃРёРІР° : ";
 	in >> tmp_input;
 
 
 	while (in.fail())							
 	{
-		cout << "\nДля ввода допустимы только цифры!";
+		cout << "\nР”Р»СЏ РІРІРѕРґР° РґРѕРїСѓСЃС‚РёРјС‹ С‚РѕР»СЊРєРѕ С†РёС„СЂС‹!";
 		in.clear();								
 		in.ignore(256, '\n');					
 		in >> tmp_input;
@@ -235,7 +235,7 @@ istream& operator>>(istream& in, MyArray& obj)
 
 	if (obj.arr)
 	{
-		cout << "\nВведите значения : ";
+		cout << "\nР’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёСЏ : ";
 		for (unsigned int i = 0; i < obj.size; i++)
 		{
 
@@ -243,7 +243,7 @@ istream& operator>>(istream& in, MyArray& obj)
 
 			while (in.fail())
 			{
-				cout << "\nДля ввода допустимы только цифры!!";
+				cout << "\nР”Р»СЏ РІРІРѕРґР° РґРѕРїСѓСЃС‚РёРјС‹ С‚РѕР»СЊРєРѕ С†РёС„СЂС‹!!";
 				in.clear();
 				in.ignore(256, '\n');
 				in >> obj.arr[i];
@@ -254,7 +254,7 @@ istream& operator>>(istream& in, MyArray& obj)
 	}
 	else
 	{
-		"\nПамять не выделена";
+		"\nРџР°РјСЏС‚СЊ РЅРµ РІС‹РґРµР»РµРЅР°";
 		obj.arr = nullptr;
 		obj.size = 0u;
 	}
@@ -311,7 +311,7 @@ void MyArray::push_back(int val)
 		}
 		else
 		{
-			cout << "\nПамять не выделена";
+			cout << "\nРџР°РјСЏС‚СЊ РЅРµ РІС‹РґРµР»РµРЅР°";
 			arr = nullptr;
 			size = 0u;
 		}
@@ -319,7 +319,7 @@ void MyArray::push_back(int val)
 	}
 	else
 	{
-		cout << "\nПамять не выделена";
+		cout << "\nРџР°РјСЏС‚СЊ РЅРµ РІС‹РґРµР»РµРЅР°";
 		temp_arr = nullptr;
 		
 	}
