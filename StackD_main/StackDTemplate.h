@@ -18,7 +18,7 @@ public:
 	StackDTemplate(const StackDTemplate& other);
 	StackDTemplate(StackDTemplate&& other)noexcept;
 	StackDTemplate& operator=(const StackDTemplate& other);
-	friend ostream& operator<<<Type>(ostream& out, StackDTemplate& obj);
+	friend ostream& operator<< <Type>(ostream& out, StackDTemplate& obj);
 	
 	
 	StackDTemplate& operator=(StackDTemplate&& other)noexcept;
