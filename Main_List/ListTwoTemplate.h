@@ -1,16 +1,87 @@
-#include "ListTwo.h"
+#pragma once
+#include <iostream>
 using namespace std;
 
 
-ListTwo::ListTwo()
+template<class Type>
+struct NodeT
+{
+	Type data;
+	NodeT* next;
+	NodeT* prev;
+
+	NodeT()
+	{
+		data = Type();
+		this->next = prev = nullptr;
+
+	}
+
+	NodeT(const Type& data)
+	{
+
+		this->data = data;
+		this->next = prev = nullptr;
+
+	}
+
+};
+
+template<class Type>
+class ListTwoTemplate
+{
+	NodeT<Type>* head;
+	NodeT<Type>* tail;
+	int count;
+
+public:
+
+	ListTwoTemplate();
+	ListTwoTemplate(const ListTwoTemplate& other);
+	ListTwoTemplate(ListTwoTemplate&& other)noexcept;
+
+	ListTwoTemplate& operator=(const ListTwoTemplate& other);
+	ListTwoTemplate& operator=(ListTwoTemplate&& other)noexcept;
+	ListTwoTemplate operator+(const ListTwoTemplate& other);
+	void push_back(const Type& add);
+	void show(bool dir = false)const;
+
+	void push_front(const Type& add);
+
+	void insert_before_found_data(const Type& data_for_srch, const Type& ins_data);
+	void insert_after_found_data(const Type& data_for_srch, const Type& ins_data);
+
+	void pop_front();
+	void pop_back();
+	void clear();
+
+	int get_count()const { return this->count; }
+
+	void erase_by_data(const Type& data_for_srch);
+	void erase_by_index(const int& indx);
+	void insert_before_index(const int& indx);
+
+	template<class Type>
+	friend ostream& operator<< (ostream& out, const ListTwoTemplate<Type>& obj);
+	
+
+	~ListTwoTemplate();
+};
+
+
+
+
+template<class Type>
+ListTwoTemplate<Type>::ListTwoTemplate()
 {
 	this->head = this->tail = nullptr;
 	count = 0;
 }
 
-ListTwo::ListTwo(const ListTwo& other)
+template<class Type>
+ListTwoTemplate<Type>::ListTwoTemplate(const ListTwoTemplate& other)
 {
-	Node* other_current = other.head;
+	NodeT<Type>* other_current = other.head;
 	while (other_current)
 	{
 		this->push_back(other_current->data);
@@ -18,7 +89,8 @@ ListTwo::ListTwo(const ListTwo& other)
 	}
 }
 
-ListTwo::ListTwo(ListTwo&& other) noexcept
+template<class Type>
+ListTwoTemplate<Type>::ListTwoTemplate(ListTwoTemplate&& other) noexcept
 {
 	this->count = other.count;
 	this->head = other.head;
@@ -28,12 +100,13 @@ ListTwo::ListTwo(ListTwo&& other) noexcept
 
 }
 
-ListTwo& ListTwo::operator=(const ListTwo& other)
+template<class Type>
+ListTwoTemplate<Type>& ListTwoTemplate<Type>::operator=(const ListTwoTemplate& other)
 {
 	if (this == &other)return *this;
 
 	this->clear();
-	Node* current_other = other.head;
+	NodeT<Type>* current_other = other.head;
 
 	while (current_other)
 	{
@@ -44,7 +117,8 @@ ListTwo& ListTwo::operator=(const ListTwo& other)
 	return *this;
 }
 
-ListTwo& ListTwo::operator=(ListTwo&& other) noexcept
+template<class Type>
+ListTwoTemplate<Type>& ListTwoTemplate<Type>::operator=(ListTwoTemplate&& other) noexcept
 {
 	if (this == &other)return *this;
 	this->clear();
@@ -58,11 +132,12 @@ ListTwo& ListTwo::operator=(ListTwo&& other) noexcept
 	return *this;
 }
 
-ListTwo ListTwo::operator+(const ListTwo& other)
+template<class Type>
+ListTwoTemplate<Type> ListTwoTemplate<Type>::operator+(const ListTwoTemplate& other)
 {
-	ListTwo temp = *this;
+	ListTwoTemplate temp = *this;
 
-	Node* other_current = other.head;
+	NodeT<Type>* other_current = other.head;
 
 	while (other_current)
 	{
@@ -73,11 +148,12 @@ ListTwo ListTwo::operator+(const ListTwo& other)
 	return temp;
 }
 
-void ListTwo::push_back(const int& add)
+template<class Type>
+void ListTwoTemplate<Type>::push_back(const Type& add)
 {
-	Node* temp = new Node(add);
+	NodeT<Type>* temp = new NodeT<Type>(add);
 
-	if (tail)
+	if (head)
 	{
 		this->tail->next = temp;
 		temp->prev = tail;
@@ -90,7 +166,8 @@ void ListTwo::push_back(const int& add)
 	count++;
 }
 
-void ListTwo::show(bool dir) const
+template<class Type>
+void ListTwoTemplate<Type>::show(bool dir) const
 {
 	if (this->head == nullptr)
 	{
@@ -99,7 +176,7 @@ void ListTwo::show(bool dir) const
 	}
 	if (dir)
 	{
-		Node* current = this->head;
+		NodeT<Type>* current = this->head;
 
 
 		while (current != nullptr)
@@ -111,7 +188,7 @@ void ListTwo::show(bool dir) const
 	}
 	else
 	{
-		Node* current = this->tail;
+		NodeT<Type>* current = this->tail;
 
 
 		while (current != nullptr)
@@ -121,21 +198,20 @@ void ListTwo::show(bool dir) const
 		}
 		cout << endl;
 	}
-	
-
 
 }
 
-void ListTwo::push_front(const int& add)
+template<class Type>
+void ListTwoTemplate<Type>::push_front(const Type& add)
 {
-	Node* temp = new Node(add);
+	NodeT<Type>* temp = new NodeT<Type>(add);
 
 	if (head)
 	{
 		temp->next = head;
 		head->prev = temp;
 		head = temp;
-		
+
 	}
 	else
 	{
@@ -145,20 +221,21 @@ void ListTwo::push_front(const int& add)
 
 }
 
-void ListTwo::insert_before_found_data(const int& data_for_srch, const int& ins_data)
+template<class Type>
+void ListTwoTemplate<Type>::insert_before_found_data(const Type& data_for_srch, const Type& ins_data)
 {
-	
+
 	if (head)
 	{
-		Node* current = head;
-		Node* to_add = new Node(ins_data);
+		NodeT<Type>* current = head;
+		NodeT<Type>* to_add = new NodeT<Type>(ins_data);
 		while (current)
 		{
 			if (current->data == data_for_srch) break;
 			current = current->next;
 		}
-	
-		if (!current) //<- без этой проверки компилятор ругается на карент
+
+		if (!current) 
 		{
 			delete to_add;
 			return;
@@ -179,25 +256,26 @@ void ListTwo::insert_before_found_data(const int& data_for_srch, const int& ins_
 		}
 		count++;
 	}
-	
+
 
 }
 
-void ListTwo::insert_after_found_data(const int& data_for_srch, const int& ins_data)
+template<class Type>
+void ListTwoTemplate<Type>::insert_after_found_data(const Type& data_for_srch, const Type& ins_data)
 {
-	
-	
+
+
 	if (head)
 	{
-		Node* current = head;
-		Node* to_add = new Node(ins_data);
+		NodeT<Type>* current = head;
+		NodeT<Type>* to_add = new NodeT<Type>(ins_data);
 		while (current)
 		{
 			if (current->data == data_for_srch) break;
 			current = current->next;
 		}
 
-		if (!current) 
+		if (!current)
 		{
 			delete to_add;
 			return;
@@ -209,7 +287,7 @@ void ListTwo::insert_after_found_data(const int& data_for_srch, const int& ins_d
 			to_add->prev = current;
 			current->next->prev = to_add;
 			current->next = to_add;
-			
+
 		}
 		else
 		{
@@ -217,14 +295,15 @@ void ListTwo::insert_after_found_data(const int& data_for_srch, const int& ins_d
 		}
 		count++;
 	}
-	
+
 }
 
-void ListTwo::pop_front()
+template<class Type>
+void ListTwoTemplate<Type>::pop_front()
 {
 	if (head)
 	{
-		Node* to_del = head;
+		NodeT<Type>* to_del = head;
 		if (head->next)
 		{
 			head = head->next;
@@ -240,12 +319,13 @@ void ListTwo::pop_front()
 	}
 }
 
-void ListTwo::pop_back()
+template<class Type>
+void ListTwoTemplate<Type>::pop_back()
 {
 
 	if (tail)
 	{
-		Node* to_del = tail;
+		NodeT<Type>* to_del = tail;
 		if (tail->prev)
 		{
 			tail = tail->prev;
@@ -262,11 +342,12 @@ void ListTwo::pop_back()
 
 }
 
-void ListTwo::clear()
+template<class Type>
+void ListTwoTemplate<Type>::clear()
 {
 	while (head)
 	{
-		Node* to_del = head;
+		NodeT<Type>* to_del = head;
 		head = head->next;
 		delete to_del;
 	}
@@ -276,11 +357,12 @@ void ListTwo::clear()
 
 }
 
-void ListTwo::erase_by_data(const int& data_for_srch)
+template<class Type>
+void ListTwoTemplate<Type>::erase_by_data(const Type& data_for_srch)
 {
 	if (head)
 	{
-		Node* current = head;
+		NodeT<Type>* current = head;
 		while (current)
 		{
 			if (current->data == data_for_srch) break;
@@ -308,7 +390,7 @@ void ListTwo::erase_by_data(const int& data_for_srch)
 		{
 			tail = current->prev;
 		}
-		
+
 		delete current;
 
 		count--;
@@ -316,18 +398,19 @@ void ListTwo::erase_by_data(const int& data_for_srch)
 	}
 }
 
-void ListTwo::erase_by_index(const int& indx)
+template<class Type>
+void ListTwoTemplate<Type>::erase_by_index(const int& indx)
 {
 	if (indx < 0 || indx > count - 1) return;
 
 	if (head)
 	{
-		
+
 		if (indx == 0)
 		{
 			pop_front();
 			return;
-			
+
 		}
 		else if (indx == count - 1)
 		{
@@ -336,13 +419,13 @@ void ListTwo::erase_by_index(const int& indx)
 		}
 
 		int cnt = 0;
-		Node* to_del = nullptr;
-		Node* current_head = head;
-		Node* current_tail = tail;
+		NodeT<Type>* to_del = nullptr;
+		NodeT<Type>* current_head = head;
+		NodeT<Type>* current_tail = tail;
 
 		if (indx <= count / 2) // если индекс ближе к началу то начинаем с начала иначе с конца.
 		{
-			
+
 			while (current_head)
 			{
 				if (indx == cnt)
@@ -356,8 +439,7 @@ void ListTwo::erase_by_index(const int& indx)
 		}
 		else
 		{
-			cnt = count - 1;
-
+			cnt = count;
 			while (current_tail)
 			{
 				if (indx == cnt)
@@ -394,34 +476,34 @@ void ListTwo::erase_by_index(const int& indx)
 			delete to_del;
 			count--;
 		}
-		
+
 	}
 }
-
-void ListTwo::insert_before_index(const int& indx)
+template<class Type>
+void ListTwoTemplate<Type>::insert_before_index(const int& indx)
 {
 	if (indx < 0 || indx > count - 1) return;
 
 	if (indx == 0)
 	{
-		push_front(int());
+		push_front(Type());
 		return;
 	}
 	else if (indx == count - 1)
 	{
-		push_back(int());
-		
-		int tmp = tail->data;
+		push_back(Type());
+		Type tmp = tail->data;
 		tail->data = tail->prev->data;
 		tail->prev->data = tmp;
+		
 		return;
 	}
 
-	
+
 	int cnt = 0;
-	Node* current_head = head;
-	Node* current_tail = tail;
-	Node* current_add = nullptr;
+	NodeT<Type>* current_head = head;
+	NodeT<Type>* current_tail = tail;
+	NodeT<Type>* current_add = nullptr;
 
 	if (indx <= count / 2)
 	{
@@ -455,24 +537,24 @@ void ListTwo::insert_before_index(const int& indx)
 	}
 	if (current_add)
 	{
-		Node* to_add = new Node(int());
+		NodeT<Type>* to_add = new NodeT<Type>;
 
 		to_add->next = current_add;
-		to_add->prev = current_add->prev; 
+		to_add->prev = current_add->prev;
 		current_add->prev->next = to_add;
 		current_add->prev = to_add;
 
 		count++;
 	}
-	
+
 
 }
-
-ListTwo::~ListTwo()
+template<class Type>
+ListTwoTemplate<Type>::~ListTwoTemplate()
 {
 
-	Node* current = this->head;
-	Node* prev_current = this->head;
+	NodeT<Type>* current = this->head;
+	NodeT<Type>* prev_current = this->head;
 
 	while (current != nullptr)
 	{
@@ -484,11 +566,12 @@ ListTwo::~ListTwo()
 	this->head = tail = nullptr;
 }
 
-ostream& operator<<(ostream& out, const ListTwo& obj)
+template<class Type>
+ostream& operator<<(ostream& out, const ListTwoTemplate<Type>& obj)
 {
 	if (obj.head)
 	{
-		Node* current = obj.head;
+		NodeT<Type>* current = obj.head;
 		while (current)
 		{
 			out << current->data << " ";
@@ -501,23 +584,4 @@ ostream& operator<<(ostream& out, const ListTwo& obj)
 		out << "\nСписок пуст";
 	}
 	return out;
-}
-
-istream& operator>>(istream& in, ListTwo& obj)
-{
-	int input;
-	cout << "\n Введите новый элемент списка  тип Int:\n->";
-	in >> input;
-
-	while (in.fail())
-	{
-		cout << "\n Ошибка ввода!\nВведите цифру:\n->";
-		in.clear();
-		in.ignore(256, '\n');
-		in >> input;
-	}
-
-	obj.push_back(input);
-
-	return in;
 }
