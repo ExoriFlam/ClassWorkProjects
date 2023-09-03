@@ -1,0 +1,9 @@
+Surname: C
+Name: Tatiana
+Age: 25
+Subjects: python
+Subjects: C++
+Subjects: C++
+Subjects: C++
+Vuz: Step
+Marks: 8 10 7 8 10 
