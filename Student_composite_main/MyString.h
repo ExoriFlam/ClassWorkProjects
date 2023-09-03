@@ -38,7 +38,7 @@ public:
 	void read_from_bin_file(FILE* file);
 	char* get_str()const { return this->str; }
 	
-	operator char* ();
+	operator char* ()const;
 
 
 	friend ostream& operator<<(ostream& out, const MyString& str);

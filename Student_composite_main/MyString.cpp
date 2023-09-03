@@ -10,42 +10,22 @@ using namespace std;
 
 void MyString::dyn_str_copy(char*& destination, const char* source)
 {
-
-
 	if (source)
 	{
+		if (!destination || strlen(destination) != strlen(source))
+		{
+			delete[] destination;
+			destination = new char[strlen(source) + 1];
+		}
+
 		if (destination)
 		{
-			if (strlen(destination) != strlen(source))
-			{
-				delete[]destination;
-				destination = new char[strlen(source) + 1];
-			}
-
-			if (destination)
-			{
-				strcpy_s(destination, strlen(source) + 1, source);
-			}
-			else
-			{
-				cout << "\nПамять не выделена.";
-			}
+			strcpy_s(destination, strlen(source) + 1, source);
 		}
 		else
 		{
-			destination = new char[strlen(source) + 1];
-
-			if (destination)
-			{
-				strcpy_s(destination, strlen(source) + 1, source);
-			}
-			else
-			{
-				cout << "\nПамять не выделена.";
-			}
-
+			cout << "\nПамять не выделена.";
 		}
-
 	}
 
 }
@@ -54,7 +34,7 @@ MyString::MyString() : str{ nullptr }
 {
 	length = strlen("Hello");
 	dyn_str_copy(this->str, "Hello");
-	
+
 }
 
 MyString::MyString(const char* string) : str{ nullptr }
@@ -228,24 +208,29 @@ void MyString::save_to_bin_file(FILE* file)const
 	//запись длины строки
 	fwrite(&this->length, sizeof(this->length), 1, file);
 	//запись содержимого строки
-	fwrite(this->str, this->length + 1, 1, file);
+	//fwrite(this->str, this->length + 1, 1, file);
+	if (this->length)
+	{
+		fwrite(str, sizeof(str[0]), this->length + 1, file);
+	}
+	
 }
 
 void MyString::read_from_bin_file(FILE* file)
 {
 	delete[]this->str;
-	
 	//считываем длину строки
 	fread(&this->length, sizeof(this->length), 1, file);
-	
 	//выделяем новую память
-	this->str = new char[this->length +1];
-	fread(this->str, this->length + 1, 1, file);
+	this->str = new char[this->length + 1] {'\0'};
+	if (str)
+	{
+		fread_s(str, length + 1, sizeof(char), this->length + 1, file);
+	}
 	
-
 }
 
-MyString::operator char* ()
+MyString::operator char* ()const
 {
 
 	return this->str;

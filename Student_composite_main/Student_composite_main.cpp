@@ -17,13 +17,13 @@ int main()
 
     ListTwoTemplate<MyString>sub1;
     sub1.push_back("python");
-    sub1.push_back("C");
     sub1.push_back("C++");
+    sub1.push_back("C");
     sub1.push_back("ASM");
    
-    StudentAgr s2("A", "Tatiana", 20, "Step", MyArray(5, 6, 12), sub1);
-    StudentAgr s3("B", "Vasilii", 25, "UTM", MyArray(5, 7, 11), sub1);
-    StudentAgr s4("C", "Serghei", 30, "MFTI", MyArray(5, 8, 10), sub1);
+    StudentAgr s2("Astafieva", "Tatiana", 20, "Step", MyArray(5, 6, 12), sub1);
+    StudentAgr s3("Borisov", "Vasilii", 25, "UTM", MyArray(5, 7, 11), sub1);
+    StudentAgr s4("Ciobanu", "Serghei", 30, "ASEM", MyArray(5, 8, 10), sub1);
 #if 0  
  /*   ListTwoTemplate<StudentAgr> listofstud;
 
@@ -89,8 +89,22 @@ int main()
         cout << "\nОшибка записи файла";
     }
 #endif // 0
-    
-    MyString a("Hello, World!");
+    MyArray arr1(8, 0, 5);
+    MyArray arr2(8, 6, 10);
+    MyArray arr3(8, 11, 6);
+    ListTwoTemplate<MyArray> list1, list2;
+    ListTwoTemplate<double> list3, list4;
+    list3.push_back(2.5);
+    list3.push_back(2.8);
+    list3.push_back(3.16);
+    list3.push_back(4.77);
+
+    list1.push_back(arr1);
+    list1.push_back(arr2);
+    list1.push_back(arr3);
+
+
+    //MyString a("Hello, World!");
 
     FILE* f;
     errno_t err;
@@ -99,6 +113,8 @@ int main()
     if (!err)
     {
         s2.save_to_bin_file(f);
+        //list1.save_to_bin_file(f);
+        //list3.save_to_bin_file(f);
         printf("Ok");
         fclose(f);
     }
@@ -109,23 +125,29 @@ int main()
 
     StudentAgr tmp;
     cout << "\nОбъект для считывания" << tmp << endl;
+    //cout << "\nОбъект для считывания" << list2 << endl;
+    //cout << "\nОбъект для считывания" << list4 << endl;
+    cout << "\n------------------------------------------------\n";
     FILE* f2;
     errno_t err2;
     err2 = fopen_s(&f2, "str3.dat", "rb");
 
     if (!err2)
     {
-        tmp.read_from_bin_file(f2);
-        cout << "\nОбъект из файла  " << tmp;
+          tmp.read_from_bin_file(f2);
+        //list2.read_from_bin_file(f2);
+        //list4.read_from_bin_file(f2);
+          cout << "\nОбъект из файла  " << tmp;
+        //cout << list4;
        
-        cout << endl << tmp;
         fclose(f2);
     }
     else
     {
         cout << "\nОшибка записи файла";
     }
-   
+    
+
 
     system("pause");
 }

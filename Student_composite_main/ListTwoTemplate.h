@@ -706,7 +706,7 @@ template<class Type>
 void ListTwoTemplate<Type>::save_to_bin_file(FILE* file)const
 {
 	Type tmp{};
-	int data_len = 0;
+
 	fwrite(&count, sizeof(count), 1, file);
 
 	for (int i = 0; i < count; i++)
@@ -714,19 +714,12 @@ void ListTwoTemplate<Type>::save_to_bin_file(FILE* file)const
 		tmp = (*this)[i];
 	
 
-		if(std::is_same<Type, MyString>::value)
-		{
-			tmp.save_to_bin_file(file);
-
-		}
-		else if(std::is_same<Type, MyArray>::value)
+		if constexpr(is_same<Type, MyString>::value || is_same<Type, MyArray>::value)
 		{
 			tmp.save_to_bin_file(file);
 		}
 		else
 		{
-			data_len = sizeof(tmp);
-			fwrite(&data_len, sizeof(Type), 1, file);
 			fwrite(&tmp, sizeof(tmp), 1, file);
 		}
 		
@@ -736,30 +729,24 @@ template<class Type>
 void ListTwoTemplate<Type>::read_from_bin_file(FILE* file)
 {
 
-	Type tmp;
+	Type tmp{};
 	clear();
-	int data_len = 0;
 	int cnt{};
+
 	fread(&cnt, sizeof(count), 1, file);
 	
 
 	while (cnt != this->count)
 	{
 
-		if (std::is_same<Type, MyString>::value)
+		if constexpr(is_same<Type, MyString>::value || is_same<Type, MyArray>::value)
 		{
 			tmp.read_from_bin_file(file);
 
 		}
-		else if (std::is_same<Type, MyArray>::value)
-		{
-			tmp.read_from_bin_file(file);
-		}
 		else
 		{
-			data_len = sizeof(tmp);
-			fread(&data_len, sizeof(Type), 1, file);
-			fread(&tmp, sizeof(tmp), 1, file);
+			fread_s(&tmp, sizeof(tmp), sizeof(tmp), 1, file);
 		}
 
 		this->push_back(tmp);

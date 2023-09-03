@@ -19,7 +19,7 @@ public:
 	StudentAgr();
 	StudentAgr(const MyString& surname, const MyString& name, int age, const MyString& vuz,
 			   const MyArray& marks, const ListTwoTemplate<MyString>& subjects);
-	friend ostream&operator<<(ostream & out, const StudentAgr & obj);
+	friend ostream& operator<<(ostream & out, const StudentAgr & obj);
 
 	bool operator<(const StudentAgr& other);
 	double get_avg();

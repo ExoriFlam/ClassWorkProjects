@@ -342,9 +342,11 @@ void MyArray::read_from_bin_file(FILE* file)
 	fread(&this->size, sizeof(this->size), 1, file);
 
 	//выделяем новую память
-	this->arr = new int[this->size];
-	fread(this->arr, sizeof(this->size), this->size, file);
-
+	this->arr = new int[this->size] {};
+	if (arr)
+	{
+		fread_s(this->arr, this->size * sizeof(int), sizeof(this->size), this->size, file);
+	}
 }
 
 MyArray::operator int()
